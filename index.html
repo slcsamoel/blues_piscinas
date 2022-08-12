@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>BlueSky</title>
+      <title>PiscinasBlue</title>
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -139,7 +139,7 @@
                   <h3 class="blog_head"><a href="#contact">Reforma</a></h3>
                </div>
                <div class="col-md-4 service_blog">
-                  <img class="margin_top_30 img-responsive" src="imgs/boiler.jpg" alt="#" />
+                  <img class="margin_top_30 img-responsive" src="imgs/boiler.jpeg" alt="#" />
                   <h3 class="blog_head"><a href="#contact">Boiller</a></h3>
                </div>
                <div class="col-md-4 service_blog">
@@ -165,12 +165,12 @@
             <div class="row">
                <div class="col-md-7">
                   <div class="contact-form">
-                     <form>
-                        <input type="text" placeholder="Nome" />
-                        <input type="email" placeholder="Email" />
-                        <input type="text" placeholder="Telefone" />
+                      <form  action="javascript:void(0)" id="form">
+                        <input type="text" id="nome" placeholder="Nome" />
+                        <input type="email" id="email" placeholder="Email" />
+                        <input type="text" id="telefone" placeholder="Telefone" />
 
-                     <select name="" id="" style="width: 100%; background: #fff; border: none; height: 60px; padding: 0 20px; text-transform: uppercase; margin: 15px 0;">
+                       <select name="servico" id="servico" style="width: 100%; background: #fff; border: none; height: 60px; padding: 0 20px; text-transform: uppercase; margin: 15px 0;">
                            <option value="">Tipo de Serviço</option>
                            <option value="Contrução">Contrução</option>
                            <option value="Reforma">Reforma</option>
@@ -179,8 +179,8 @@
                            <option value="Caixa d'agua">Caixa d'agua</option>
                         </select>
 
-                        <textarea placeholder="Mensagem"></textarea>
-                        <input type="submit" value="ENVIAR">
+                        <textarea id="mensagem" placeholder="Mensagem"></textarea>
+                        <input type="submit" id="submit" value="ENVIAR">
                      </form>
                   </div>
                </div>
@@ -257,9 +257,9 @@
                <div class="col-lg-4 col-md-6 col-12">
                   <div class="item">
                      <h4 class="text-uppercase">Informações de Contatos</h4>                     
-                     <img src="imgs/instagram.png" alt="#"/><a href="">  INSTAGRAM</a> <br/>
-                     <img src="imgs/wpp.png" alt="#"/><a href="">  WHATSAPP</a><br/>
-                     <img src="imgs/email.png" alt="#"/><a href=""></a> picinas_blue@gmail.com<br/>
+                     <img src="imgs/instagram.png" alt="#"/><a href="https://instagram.com/piscinas_bluego?utm_medium=copy_link">  INSTAGRAM</a> <br/>
+                     <img src="imgs/wpp.png" alt="#"/><a href="https://api.whatsapp.com/send?phone=5562984529256&text=">  WHATSAPP</a><br/>
+                     <img src="imgs/email.png" alt="#"/><a href=""></a> souzaprestadora1@gmail.com<br/>
                   </div>
                </div>
             </div>
@@ -298,18 +298,21 @@
          })
 
 
-         document.querySelector('#submit').addEventListener('click',function(){
+         document.querySelector('#form').addEventListener('submit',function(){
             
          let cliente = document.querySelector('#nome').value;
-         let sobrenome = document.querySelector('#sobrenome').value;
          let email = document.querySelector('#email').value;
          let telefone = document.querySelector('#telefone').value;
-         let exampleFormControlSelect1 = document.querySelector('#exampleFormControlSelect1').value;
+         let servico = document.querySelector('#servico').value;
+
+         
+
+         let mensagem = document.querySelector('#mensagem').value;
  
-         let url = "https://api.whatsapp.com/send?phone=5511989126556&text= Bem vindo a Corretora Sousa -->> %0A Qual é o seu nome? %0A " + cliente + " %0A Qual o seu sobrenome ?%0A" + 
-         sobrenome + "%0A Qual o seu e-mail %0A "+ email +" %0A Qual é o seu telefone ? %0A "+ telefone +" %0A Uma cotação para quantas vidas ? %0A" + exampleFormControlSelect1; 
-  
-         window.open(url);
+         let url = "https://api.whatsapp.com/send?phone=5562984529256&text= Bem vindo a Pisicinas Blue -->> %0A Qual é o seu nome? %0A " + cliente +   
+           "%0A Qual o seu e-mail %0A "+ email +" %0A Qual é o seu telefone ? %0A "+ telefone +" %0A Serviço de interresse%0A" + servico + "%0A Mensagem : %0A" + mensagem; 
+           
+           window.open(url);
 
          });
 
